@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>الفصل الأول · كتاب الفيزياء التفاعلي</title>
 <meta name="description" content="كتاب فيزياء تفاعلي 3D — الفصل الأول: التيار الكهربي وقانون أوم وقانونا كيرشوف (3 ثانوي)">
+<link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -52,7 +53,7 @@
 html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);}
 body{font-family:'Cairo',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;color:var(--chrome-ink);-webkit-tap-highlight-color:transparent;}
 #stage{position:fixed;inset:0;overflow:hidden;touch-action:none}
-#stage canvas{position:absolute;inset:0;display:block;outline:none}
+#stage > canvas{position:absolute;inset:0;display:block;outline:none}
 .css3d-root{position:absolute !important;inset:0;pointer-events:none;direction:ltr}
 .css3d-root .pg{left:0;top:0;direction:rtl}
 button{font-family:inherit}
@@ -783,7 +784,7 @@ const L3 = {
   },
   prediction: {
     id: 'l3-equal',
-    q: 'في المعمل نقطتين: جهد A = <span class="m">−10 V</span> وجهد B = <span class="m">−10 V</span>، وبينهم لمبة. هيعدّي تيار؟',
+    q: 'في المعمل نقطتين A وB: <span class="m">V<sub>A</sub> = −10 V</span> و<span class="m">V<sub>B</sub> = −10 V</span>، وبينهم لمبة. هيعدّي تيار؟',
     options: [
       { id: 'a', t: 'أيوه، من A لـ B.' },
       { id: 'b', t: 'لأ، مفيش تيار عشان الجهدين متساويين.' },
@@ -800,8 +801,8 @@ const L3 = {
   why: {
     title: 'التفسير',
     reqs: [{ key: 'predicted', t: 'اتوقّع الأول' }, { key: 'triedDiff', t: 'خلّي الجهدين مختلفين في المعمل' }],
-    html: `<p>الشحنة بتتحرك بس لو فيه <b>فرق جهد</b> بين النقطتين، والتيار الاصطلاحي بيمشي <b>من الأعلى للأقل</b>: من +5 لـ +2، ومن −2 لـ −5 (لأن −2 أعلى من −5).</p>
-           <p>ولو الجهدين متساويين (5 و5، أو −10 و−10، أو 0 و0) <b>مفيش تيار</b>.</p>
+    html: `<p>الشحنة بتتحرك بس لو فيه <b>فرق جهد</b> بين النقطتين، والتيار الاصطلاحي بيمشي <b>من الأعلى للأقل</b>: من <span class="m">+5</span> لـ <span class="m">+2</span>، ومن <span class="m">−2</span> لـ <span class="m">−5</span> (لأن <span class="m">−2</span> أعلى من <span class="m">−5</span>).</p>
+           <p>ولو الجهدين متساويين (<span class="m">5</span> و<span class="m">5</span>، أو <span class="m">−10</span> و<span class="m">−10</span>، أو <span class="m">0</span> و<span class="m">0</span>) <b>مفيش تيار</b>.</p>
            <p>وكل ما الفرق يكبر، الشغل اللي بيتعمل على كل كولوم يكبر: <span class="m">W = QV</span>.</p>
            <p class="tagline">📖 الكتاب ص 19</p>`,
   },
@@ -813,7 +814,7 @@ const L3 = {
       { p: '<b>الفولتميتر</b> بيقيس فرق الجهد، وبيتوصل <b>على التوازي</b> مع الجزء اللي عايز تقيس عليه.' },
       { p: 'فرق الجهد = الجهد الأعلى − الجهد الأقل: <span class="m">V = V<sub>high</sub> − V<sub>low</sub></span>. والنقطة المتوصلة <b>بالأرض</b> جهدها <b>صفر</b>.' },
       { note: '<b>القوة الدافعة الكهربية</b> <span class="ei">(EMF, V<sub>B</sub>)</span> للمصدر = الشغل الكلي اللي بيتبذل عشان ينقل شحنة 1 كولوم <b>في الدائرة كلها</b> (جوه المصدر وبراه)، ووحدتها الفولت. والمصدر بيبذل الشغل ده على الإلكترونات الحرة الموجودة أصلًا في الأسلاك.' },
-      { example: '<b>مثال من الكتاب:</b> مصباح بين نقطتين جهدهم +20 V و−30 V، وعدّت فيه شحنة 20 C ← <span class="m">V = 20 − (−30) = 50 V</span> ← <span class="m">W = QV = 20 × 50 = 1000 J</span>.' },
+      { example: '<b>مثال من الكتاب:</b> مصباح بين نقطتين جهدهم <span class="m">+20 V</span> و<span class="m">−30 V</span>، وعدّت فيه شحنة <span class="m">20 C</span> ← <span class="m">V = 20 − (−30) = 50 V</span> ← <span class="m">W = QV = 20 × 50 = 1000 J</span>.' },
     ],
     glossary: [
       ['Electric Potential', 'الجهد الكهربي', 'الحالة اللي بتحدد اتجاه انتقال الشحنة'],
@@ -846,9 +847,9 @@ const L3 = {
       correct: 'b', why: 'صح: <span class="m">V = W/Q = 20 ÷ 5 = 4 V</span> (ص 20).',
       wrong: { a: 'ده حاصل الضرب. <span class="m">V = W/Q = 20 ÷ 5 = 4 V</span>.', c: 'قلبت القسمة. <span class="m">V = W/Q = 20 ÷ 5 = 4 V</span>.' } },
     { id: 'q2', type: 'اختيار', q: 'نقطة جهدها <span class="m">−2 V</span> ونقطة جهدها <span class="m">−5 V</span>، وبينهم سلك. التيار الاصطلاحي بيمشي…',
-      options: [{ id: 'a', t: 'من −5 لـ −2' }, { id: 'b', t: 'من −2 لـ −5' }, { id: 'c', t: 'مفيش تيار' }],
-      correct: 'b', why: 'صح: −2 أعلى من −5، والتيار الاصطلاحي من الأعلى للأقل (ص 19).',
-      wrong: { a: '−2 أعلى من −5 (أقرب للموجب). التيار الاصطلاحي من الأعلى للأقل: من −2 لـ −5.', c: 'الجهدين مختلفين (الفرق 3 V)، فيعدّي تيار.' } },
+      options: [{ id: 'a', t: 'من <span class="m">−5 V</span> لـ <span class="m">−2 V</span>' }, { id: 'b', t: 'من <span class="m">−2 V</span> لـ <span class="m">−5 V</span>' }, { id: 'c', t: 'مفيش تيار' }],
+      correct: 'b', why: 'صح: <span class="m">−2</span> أعلى من <span class="m">−5</span>، والتيار الاصطلاحي من الأعلى للأقل (ص 19).',
+      wrong: { a: '<span class="m">−2</span> أعلى من <span class="m">−5</span> (أقرب للموجب). التيار الاصطلاحي من الأعلى للأقل: من <span class="m">−2</span> لـ <span class="m">−5</span>.', c: 'الجهدين مختلفين (الفرق <span class="m">3 V</span>)، فيعدّي تيار.' } },
     { id: 'q3', type: 'احسب', q: 'مصباح بين نقطتين جهدهم <span class="m">+20 V</span> و<span class="m">−30 V</span>، وعدّت فيه شحنة <span class="m">20 C</span>. الشغل المبذول…',
       options: [{ id: 'a', t: '200 J' }, { id: 'b', t: '1000 J' }, { id: 'c', t: '2.5 J' }],
       correct: 'b', why: 'صح: <span class="m">V = 20 − (−30) = 50 V</span>، و<span class="m">W = QV = 20 × 50 = 1000 J</span> (ص 21).',
@@ -858,7 +859,7 @@ const L3 = {
       correct: 't', why: 'صح (ص 20). وبنقيس جهود النقط التانية بالنسبة لها، زي ما شفت في «جهود الدائرة والأرضي».',
       wrong: { f: 'الكتاب بيقول إن جهد النقطة المتوصلة بالأرض = صفر، وبنقيس الجهود التانية بالنسبة لها.' } },
     { id: 'q5', type: 'طبّق', q: 'مصباح طرفه x جهده <span class="m">+3 V</span>. عدّى فيه تيار 2 A من x لـ y لمدة 4 s، والشغل المبذول 80 J. جهد الطرف y…',
-      options: [{ id: 'a', t: '+13 V' }, { id: 'b', t: '−7 V' }, { id: 'c', t: '+7 V' }],
+      options: [{ id: 'a', t: '<span class="m">+13 V</span>' }, { id: 'b', t: '<span class="m">−7 V</span>' }, { id: 'c', t: '<span class="m">+7 V</span>' }],
       correct: 'b', why: 'صح: <span class="m">Q = It = 8 C</span> ← <span class="m">V = W/Q = 10 V</span> ← <span class="m">V<sub>x</sub> − V<sub>y</sub> = 10</span> ← <span class="m">V<sub>y</sub> = −7 V</span> (ص 21).',
       wrong: { a: 'التيار ماشي من x لـ y، يعني x هو الأعلى. يبقى <span class="m">V<sub>y</sub> = 3 − 10 = −7 V</span> مش 3 + 10.', c: 'افتكر <span class="m">V<sub>x</sub> − V<sub>y</sub> = 10</span>، يعني <span class="m">V<sub>y</sub> = 3 − 10 = −7 V</span>.' } },
   ],
@@ -1375,7 +1376,7 @@ function makeCover(w, depth, h) {
   g.userData = {
     pickables: [front, back],
     get closed() { return k < 1; },
-    open(instant) { if (k >= 1) return; if (instant || REDUCED) { k = 1; apply(); return; } Tweens.add(0.9, t => { k = Math.max(k, t); apply(); }); },
+    open(instant) { if (k >= 1) return Promise.resolve(); if (instant || REDUCED) { k = 1; apply(); return Promise.resolve(); } return Tweens.add(0.9, t => { k = Math.max(k, t); apply(); }); },
   };
   apply();
   return g;
@@ -1414,7 +1415,7 @@ class Graph {
       g.fillText('Δt', (X(x1) + X(x2)) / 2, Y(y1) + 11); g.textAlign = 'left'; g.fillText(spec.tri.dyLabel || 'ΔQ', X(x2) + 3, (Y(y1) + Y(y2)) / 2);
     }
     (spec.points || []).forEach(p => { g.fillStyle = p.color || '#13708f'; g.beginPath(); g.arc(X(p.x), Y(p.y), 3.4, 0, 6.283); g.fill(); g.strokeStyle = '#fff'; g.lineWidth = 1; g.stroke(); });
-    if (spec.note) { g.fillStyle = '#2b7448'; g.font = '700 10px Cairo, sans-serif'; g.textAlign = 'left'; g.fillText(spec.note, P.l + 6, P.t + 12); }
+    if (spec.note) { g.fillStyle = '#2b7448'; g.font = 'italic 700 10.5px Georgia, serif'; g.textAlign = 'left'; g.fillText(spec.note, P.l + 6, P.t + 12); }
   }
 }
 
@@ -1755,7 +1756,7 @@ class ChargeFlowScene extends LessonScene {
 class ChargeCounterScene extends LessonScene {
   init() {
     const graph = this.graph = this.opts.mode === 'graph';
-    Object.assign(this, { x0: -0.85, x1: 0.85, cy: 0.2, cz: graph ? -0.9 : -0.78, Rw: graph ? 0.12 : 0.15, Rn: graph ? 0.12 : 0.07, qp: graph ? 0.2 : 0.1, v0: graph ? 0.32 : 0.16 });
+    Object.assign(this, { x0: -0.85, x1: 0.85, cy: 0.2, cz: graph ? -0.74 : -0.76, Rw: graph ? 0.12 : 0.15, Rn: graph ? 0.12 : 0.07, qp: graph ? 0.2 : 0.1, v0: graph ? 0.32 : 0.16 });
     this.I0 = 2; this.profile = 'const'; this.t = 0; this.running = false; this.done = false; this.acc = 0;
     this.masked = !graph && !Progress.get('l2').pred;
     const { x0, x1, cy, cz } = this;
@@ -1849,7 +1850,7 @@ class ChargeCounterScene extends LessonScene {
 /* ---------- Lesson 3a: potential ramp between two points ---------- */
 class PotentialRampScene extends LessonScene {
   init() {
-    this.VA = -10; this.VB = -10; this.Q = 20; this.y0 = 0.4; this.k = 0.011; this.ax = -0.55; this.bx = 0.55; this.z = -0.66; this.s = 0;
+    this.VA = -10; this.VB = -10; this.Q = 20; this.y0 = 0.3; this.k = 0.0085; this.ax = -0.55; this.bx = 0.55; this.z = -0.52; this.s = 0;
     const { z } = this;
     this.pillars = [this.ax, this.bx].map((x, i) => {
       const g = new THREE.Group(); g.position.set(x, 0, z); this.root.add(g);
@@ -1864,10 +1865,10 @@ class PotentialRampScene extends LessonScene {
     this.lamp = makeLamp(0.75); this.root.add(this.lamp);
     this.nB = 10; this.beads = new THREE.InstancedMesh(new THREE.SphereGeometry(0.022, 14, 10), new THREE.MeshStandardMaterial({ color: 0xd9822b, emissive: 0x7a3a00, emissiveIntensity: .25, roughness: .4 }), this.nB);
     this.beads.castShadow = true; this.beads.raycast = () => { }; this.root.add(this.beads); this.m4 = new THREE.Matrix4();
-    this.cover = makeCover(1.55, 0.5, 0.82); this.cover.position.set(0, 0, z); this.root.add(this.cover);
+    this.cover = makeCover(1.5, 0.62, 0.5); this.cover.position.set(0, 0, z + 0.04); this.root.add(this.cover);
     this.cover.userData.pickables.forEach(p => this.pickables.push(p));
     if (Progress.get('l3').pred) this.cover.userData.open(true);
-    this.cleanups.push(on('predicted', ({ id }) => { if (id === 'l3') { this.cover.userData.open(); this.emitState(); } }));
+    this.cleanups.push(on('predicted', ({ id }) => { if (id === 'l3') this.cover.userData.open().then(() => this.emitState()); }));
     this.layout(); this.emitState();
   }
   yOf(V) { return this.y0 + V * this.k; }
@@ -1906,7 +1907,7 @@ class PotentialRampScene extends LessonScene {
 /* ---------- Lesson 3b: potentials around a circuit, movable ground ---------- */
 class PotentialCircuitScene extends LessonScene {
   init() {
-    Object.assign(this, { E: 12, R1: 10, R2: 20, ground: 'M', probe: 'PN', y0: 0.33, k: 0.011, xL: -0.62, xR: 0.62, zT: -0.98, zB: -0.36 });
+    Object.assign(this, { E: 12, R1: 10, R2: 20, ground: 'M', probe: 'PN', y0: 0.23, k: 0.0088, xL: -0.6, xR: 0.6, zT: -0.8, zB: -0.2 });
     this.root.add(inkPath([[this.xL, this.zB], [this.xL, this.zT], [this.xR, this.zT], [this.xR, this.zB], [this.xL, this.zB]], 0.006, 0.0015, Ink.flat(0xb8ad9c)));
     this.dyn = new THREE.Group(); this.root.add(this.dyn);
     this.nB = 22; this.beads = new THREE.InstancedMesh(new THREE.SphereGeometry(0.016, 12, 8), new THREE.MeshStandardMaterial({ color: 0xd9822b, emissive: 0x7a3a00, emissiveIntensity: .25 }), this.nB);
@@ -1940,7 +1941,7 @@ class PotentialCircuitScene extends LessonScene {
     res(A1, A2, 'R₁'); res(A2, A3, 'R₂');
     const nodePos = { P: A1, M: A2, N: A0 };
     ['P', 'M', 'N'].forEach(n => { const l = textSprite(n, { px: 100, h: 0.075, family: 'Georgia', color: '#6a4c9c', stroke: '#fffaf0' }); l.position.copy(nodePos[n]).add(new THREE.Vector3(n === 'M' ? 0.08 : -0.08, 0.06, 0)); this.dyn.add(l); });
-    const gp = nodePos[this.ground]; const gl = textSprite('أرضي = 0 V', { px: 80, h: 0.06, color: '#2b7448', stroke: '#fffaf0' }); gl.position.copy(gp).add(new THREE.Vector3(0, -0.07, 0.09)); this.dyn.add(gl);
+    const gp = nodePos[this.ground]; const gl = textSprite('0 V', { px: 84, h: 0.06, family: 'Georgia', color: '#2b7448', stroke: '#fffaf0' }); gl.position.copy(gp).add(new THREE.Vector3(0, -0.07, 0.09)); this.dyn.add(gl);
     const ringMat = new THREE.MeshBasicMaterial({ color: 0x13708f });
     this.probe.split('').forEach(n => { const r = new THREE.Mesh(new THREE.TorusGeometry(0.035, 0.007, 8, 28), ringMat); r.rotation.x = Math.PI / 2; r.position.copy(nodePos[n]); this.dyn.add(r); });
     this.emitState();
@@ -2696,10 +2697,10 @@ const LabBinders = {
       const qPts = s.samples.map(p => [p[0], p[1]]), iPts = s.samples.map(p => [p[0], p[2]]);
       if (qPts.length) { qPts.unshift([0, 0]); iPts.unshift([0, ramp ? 0 : s.I0]); }
       let tri = null, note = null;
-      if (s.done && !ramp) { tri = { x1: 1, y1: s.I0, x2: 3, y2: s.I0 * 3 }; note = `الميل = ${fmt(s.I0 * 2, 1)} ÷ 2 = ${fmt(s.I0, 2)} A`; }
-      if (s.done && ramp) { tri = { x1: 2, y1: 8, x2: 4, y2: 24 }; note = 'الميل هنا (من 2 لـ 4 s) = 16 ÷ 2 = 8 A'; }
+      if (s.done && !ramp) { tri = { x1: 1, y1: s.I0, x2: 3, y2: s.I0 * 3 }; note = `ΔQ/Δt = ${fmt(s.I0 * 2, 1)}/2 = ${fmt(s.I0, 2)} A`; }
+      if (s.done && ramp) { tri = { x1: 2, y1: 8, x2: 4, y2: 24 }; note = 'ΔQ/Δt = 16/2 = 8 A'; }
       gQ.draw({ xMax: 4, yMax: qMax, xLabel: 't (s)', yLabel: 'Q (C)', lines: [{ pts: qPts, color: '#b8620c' }], tri, note });
-      gI.draw({ xMax: 4, yMax: iMax, xLabel: 't (s)', yLabel: 'I (A)', lines: [{ pts: iPts, color: '#13708f' }], area: iPts, areaColor: 'rgba(19,112,143,.16)', note: s.done ? `المساحة = Q = ${fmt(s.Q, 1)} C` : null });
+      gI.draw({ xMax: 4, yMax: iMax, xLabel: 't (s)', yLabel: 'I (A)', lines: [{ pts: iPts, color: '#13708f' }], area: iPts, areaColor: 'rgba(19,112,143,.16)', note: s.done ? `Area = Q = ${fmt(s.Q, 1)} C` : null });
     };
     const upd = s => {
       run.textContent = s.running ? '⏸ وقّف' : (s.done ? '▶ تاني' : '▶ شغّل');
@@ -2723,7 +2724,7 @@ const LabBinders = {
     ['VA', 'VB'].forEach(k => { const r = $(`[data-rng="${k}"]`, panel); r.addEventListener('input', () => scene.set(k, +r.value)); });
     const rq = $('[data-rng="Q"]', panel); rq.addEventListener('input', () => scene.setQ(+rq.value));
     $('[data-act="book"]', panel).addEventListener('click', () => scene.bookExample());
-    const sV = v => `${v > 0 ? '+' : v < 0 ? '−' : ''}${Math.abs(v)} V`;
+    const sV = v => `${v > 0 ? '+' : v < 0 ? '−' : ''}${Math.abs(v)} V`, iso = s => `⁦${s}⁩`;
     const upd = s => {
       hint.innerHTML = s.covered ? X.hintLocked : X.hint; hint.classList.toggle('unlocked', !s.covered);
       $('[data-rng="VA"]', panel).value = s.VA; $('[data-rng="VB"]', panel).value = s.VB; rq.value = s.Q;
@@ -2733,7 +2734,7 @@ const LabBinders = {
       $('[data-ro="W"]', panel).textContent = s.covered ? '؟' : `${s.W} J`;
       let t;
       if (s.covered) t = 'المنحدر متغطّي لحد ما تتوقّع.';
-      else if (!s.dV) t = `الجهدين متساويين (${sV(s.VA)}): المنحدر مستوي، والشحنات واقفة، ومفيش تيار.`;
+      else if (!s.dV) t = `الجهدين متساويين (${iso(sV(s.VA))}): المنحدر مستوي، والشحنات واقفة، ومفيش تيار.`;
       else t = `${s.dir === 'AB' ? 'A أعلى من B' : 'B أعلى من A'} بـ ${Math.abs(s.dV)} V، فالتيار الاصطلاحي ${s.dir === 'AB' ? 'من A لـ B' : 'من B لـ A'}. ولنقل ${s.Q} C، الشغل = ${s.Q} × ${Math.abs(s.dV)} = ${s.W} J.`;
       setState(panel, t, !s.covered && !!s.dV);
     };
@@ -2957,7 +2958,8 @@ class BookEngine {
       down = { x: e.clientX, y: e.clientY, t: performance.now() };
       const o = B.pick(e.clientX, e.clientY, this.scene && this.scene.pickables);
       if (o && o.userData.drag) {
-        this.drag = { obj: o, y: o.getWorldPosition(new THREE.Vector3()).y }; B.controls.enabled = false; cv.setPointerCapture(e.pointerId);
+        this.drag = { obj: o, y: o.getWorldPosition(new THREE.Vector3()).y }; B.controls.enabled = false;
+        try { cv.setPointerCapture(e.pointerId); } catch (err) { /* synthetic events */ }
       }
     });
     cv.addEventListener('pointermove', e => {
