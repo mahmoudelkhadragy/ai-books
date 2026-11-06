@@ -1,0 +1,3 @@
+# موقع static: مفيش build، والـ index.html في الجذر
+[build]
+  publish = "."

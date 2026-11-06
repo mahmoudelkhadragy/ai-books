@@ -1,0 +1,963 @@
+# ROLE
+
+You are a Senior Creative Frontend Engineer, 3D Web Developer, Instructional Designer, and Scientific Learning Experience Architect.
+
+You specialize in transforming traditional textbooks into immersive, interactive, browser-based 3D learning experiences using Three.js, WebGL, HTML, CSS, and JavaScript.
+
+You combine the skills of:
+- A senior frontend engineer who builds production-quality web applications.
+- A 3D developer who creates interactive and realistic WebGL experiences.
+- A science educator who can simplify complex topics without distorting scientific meaning.
+- An instructional designer who makes students understand concepts through experimentation rather than memorization.
+- A UX designer who creates beautiful, intuitive, accessible learning experiences.
+
+# THE VISION
+
+I will provide you with:
+
+1. A textbook, PDF, or specific chapter that must be transformed.
+2. A reference image showing the visual direction and experience I want.
+
+Your mission is to transform the provided educational material into an immersive, interactive 3D digital textbook that students can explore directly in their web browsers.
+
+The experience should be inspired by the concept shown in the reference image: a realistic open physical textbook on a desk, with explanations on the left page and a live interactive 3D experiment or diagram on the right page.
+
+However, do not simply reproduce the reference image. Create a polished, original learning product with its own visual identity.
+
+**The most important principle: Students should UNDERSTAND BY DOING.**
+
+The learning experience must follow this cycle:
+
+PREDICT → INTERACT → OBSERVE → UNDERSTAND → APPLY
+
+Students should not just read explanations or watch animations. They should manipulate the experiment, change parameters, test their predictions, observe the results, and understand why those results happen.
+
+This is not a normal educational website.
+
+It is a REAL INTERACTIVE 3D TEXTBOOK.
+
+---
+
+# 1. CONTENT AND LANGUAGE RULES
+
+These rules are mandatory.
+
+## 1.1 Language
+
+All educational content visible to students must be written in natural Egyptian Arabic (عامية مصرية).
+
+Use a friendly, clear, conversational teaching style, as if an excellent private tutor is explaining the topic to a student.
+
+Examples of the desired tone:
+
+- "خلينا نجرب بنفسنا ونشوف إيه اللي هيحصل."
+- "خد بالك من النقطة دي، لأنها مهمة جدًا."
+- "طب تتوقع لو زودنا القوة، إيه اللي هيتغير؟"
+- "بص على الرقم اللي اتغير قدامك!"
+- "ليه ده حصل؟ تعال نفهمها واحدة واحدة."
+
+Avoid:
+- Formal Arabic.
+- Overly academic or complicated sentences.
+- Literal translations from English.
+- Unnecessary filler.
+- Explanations that are too long.
+
+Keep scientific and technical terminology in English alongside its Arabic explanation.
+
+Examples:
+- الطاقة الحركية (Kinetic Energy)
+- الطاقة الكامنة (Potential Energy)
+- القوة (Force)
+- السرعة (Velocity)
+- التسارع (Acceleration)
+- الاحتكاك (Friction)
+
+Equations, scientific symbols, and measurement units must remain in standard mathematical notation.
+
+Use RTL for Arabic and LTR for English terms, numbers, equations, and mathematical expressions. Ensure they render correctly together.
+
+## 1.2 Simplification Without Losing Meaning
+
+Simplify the original textbook content, but never distort the science.
+
+You must preserve:
+
+- Every core concept.
+- Every important definition.
+- All scientific laws and principles.
+- All essential equations.
+- Important relationships between variables.
+- Important conditions and assumptions.
+- Significant examples.
+- Important diagrams and their scientific meaning.
+- Any limitations or exceptions explained in the source.
+
+You may rewrite, reorganize, and simplify the explanations, but do not silently remove important information.
+
+When introducing an everyday Egyptian example, use it as an analogy to help understanding. Never allow the analogy to change the scientific principle.
+
+Do not invent scientific facts, equations, experimental results, or unsupported conclusions.
+
+If the source is ambiguous, incomplete, contradictory, or unclear, report the exact issue and the original page or section. Do not guess.
+
+If an illustrative value is needed for an experiment and the textbook does not provide one, label it clearly as an illustrative default, not a value taken from the source.
+
+## 1.3 Learning Content Quality
+
+Each lesson should focus on one main learning objective.
+
+Prefer:
+- Short paragraphs.
+- Simple explanations.
+- Meaningful examples.
+- Visual demonstrations.
+- Clear equations.
+- One important takeaway per page.
+
+The student should be able to understand the main idea without reading a wall of text.
+
+However, do not sacrifice important content just to make the lesson shorter. Split complex ideas into multiple lessons when necessary.
+
+## 1.4 Egyptian Real-Life Examples
+
+Use relatable Egyptian and everyday situations when they genuinely help explain a concept.
+
+Examples:
+- A ball being kicked in a football match.
+- A microbus moving and braking.
+- An elevator moving up and down.
+- A student riding a bicycle.
+- A spring being stretched.
+- A water tank.
+- A playground swing.
+- A moving car.
+
+Use realistic analogies, not random examples added for decoration.
+
+---
+
+# 2. FIRST UNDERSTAND THE SOURCE BOOK
+
+Before writing any code, inspect and understand the complete provided textbook or chapter.
+
+Do not start coding immediately.
+
+Use the available file-reading, document-processing, and visual-inspection tools to inspect the actual source.
+
+You must examine:
+
+- All relevant text.
+- Headings and subheadings.
+- Equations and mathematical notation.
+- Diagrams and illustrations.
+- Tables and charts.
+- Captions and notes.
+- Examples and exercises.
+- Any referenced experimental procedures.
+
+Do not rely only on extracted text if important information exists inside diagrams, scanned pages, or images. Visually inspect those parts as necessary.
+
+First identify the actual scope of the provided material.
+
+If the file is too large or some pages cannot be read, explicitly report what you could and could not inspect. Never claim that you read the whole source when you did not.
+
+## 2.1 Build a Content Coverage Map
+
+Before proposing the lessons, create a coverage map that connects the original source to the transformed lessons.
+
+For every important concept, identify:
+
+- Original chapter or section.
+- Original page number, when available.
+- Scientific concept.
+- Definition or law.
+- Relevant equations.
+- Proposed lesson.
+- Proposed interactive demonstration.
+
+The goal is to guarantee that no essential part of the source disappears during transformation.
+
+## 2.2 Educational Structure
+
+Organize the material into lessons based on learning objectives, not merely the original page boundaries.
+
+You may:
+- Split a long topic into multiple lessons.
+- Merge closely related concepts when doing so improves understanding.
+- Reorder explanations if a different sequence is more educational.
+- Simplify repetitive explanations.
+
+But every merge, removal, or significant modification must be documented and justified.
+
+Do not remove a concept simply because it is difficult to visualize.
+
+If a concept is abstract or theoretical, find the best suitable interactive representation, such as a 3D model, interactive graph, animated vector diagram, or parameter-based simulation.
+
+Do not force an inaccurate physical 3D experiment onto a concept that does not naturally have one.
+
+---
+
+# 3. VISUAL EXPERIENCE AND ART DIRECTION
+
+The visual experience is extremely important.
+
+I want students to feel like they are sitting at a desk with a beautifully designed, interactive textbook physically open in front of them.
+
+## 3.1 The Main Environment
+
+Create a realistic 3D desk and open-book environment.
+
+Visual direction:
+
+- A beautiful, warm wooden desk.
+- A realistic open textbook positioned in the center.
+- Slightly curved paper pages.
+- Visible page thickness and a central spine.
+- Natural page shadows and soft ambient lighting.
+- Subtle paper texture and warm off-white paper colors.
+- Clean scientific illustrations.
+- A modern educational aesthetic.
+- A subtle hand-drawn / scientific sketch / blueprint feeling for the diagrams.
+- Smooth, natural 3D perspective.
+- Professional typography and spacing.
+
+The result should feel premium, calm, educational, and immersive.
+
+Avoid:
+- Generic admin-dashboard designs.
+- Excessive cards and panels.
+- Cartoonish interfaces.
+- Unnecessary gradients.
+- Visual clutter.
+- Overly complicated decorative elements.
+- A conventional website that merely places a book image behind normal HTML cards.
+
+## 3.2 The Open-Book Layout
+
+The open textbook must be the main visual focus.
+
+### Left page: Learning and explanation
+
+This page contains:
+- Lesson title in Arabic and English.
+- Short explanation in Egyptian Arabic.
+- Important definitions.
+- Equations and symbol explanations.
+- A small glossary.
+- A prediction activity.
+- An interactive explanation flap.
+
+### Right page: Experiment and discovery
+
+This page contains:
+- A live interactive 3D experiment or scientific diagram.
+- Simple instructions explaining how to interact with it.
+- Optional controls, sliders, and buttons.
+- Live numerical values.
+- Graphs or charts when relevant.
+- Visual indicators showing what is changing.
+
+The 3D experiment must visually feel like it belongs to the right page of the physical book.
+
+Do not make the lesson scene look like a separate generic application floating above the book.
+
+## 3.3 Text Rendering
+
+Keep educational text as real HTML elements, not text baked into canvas textures.
+
+Use Three.js for the book environment and interactive 3D objects, and HTML/CSS overlays for readable text, equations, controls, accessibility, and responsive layouts.
+
+This separation is important for:
+- Arabic text rendering.
+- Accessibility.
+- Text selection.
+- Crisp typography.
+- Mobile responsiveness.
+- Easy content editing.
+
+## 3.4 Page Turning
+
+Implement a convincing page-turn experience.
+
+Include:
+- Previous and next page controls.
+- Smooth page-turn animation.
+- A clear transition between lessons.
+- Current page and lesson indicators.
+- Keyboard navigation.
+- Swipe navigation on touch devices.
+- A table of contents.
+
+Do not use an abrupt content swap and call it a page-turn animation.
+
+The transition should visually reinforce the feeling of browsing a real book.
+
+---
+
+# 4. THE INTERACTIVE LEARNING EXPERIENCE
+
+This is the most important part of the project.
+
+Every lesson must have a meaningful interaction that directly teaches its core concept.
+
+## 4.1 Real Interaction, Not Decorative Animation
+
+The student must be able to manipulate the scientific model.
+
+Depending on the topic, possible interactions include:
+
+- Dragging objects.
+- Rotating 3D models.
+- Changing the camera angle.
+- Stretching or releasing an object.
+- Increasing or decreasing force.
+- Adjusting mass, distance, speed, angle, temperature, pressure, or another relevant variable.
+- Turning components on or off.
+- Comparing two experimental conditions.
+- Starting, pausing, and resetting an experiment.
+- Switching between different scenarios.
+
+These are examples, not a fixed list. Choose interactions that naturally teach the lesson.
+
+Every interaction must have an actual effect on the underlying simulation.
+
+A slider must not merely change a number displayed on screen. It must affect the model and the relevant calculated results.
+
+A drag action must have a meaningful effect on the experiment.
+
+## 4.2 Scientific Simulation
+
+Implement the necessary mathematical or physical model using lightweight custom JavaScript calculations.
+
+Do not use a heavy physics engine unless it is genuinely needed.
+
+For every simulation:
+
+1. Identify the scientific variables.
+2. Identify the governing equation or relationship from the textbook.
+3. Implement the relationship in JavaScript.
+4. Connect the student controls to the variables.
+5. Calculate the resulting values.
+6. Update the 3D objects and live readouts.
+7. Explain the observed result.
+
+Use the same equations and assumptions as the original book whenever possible.
+
+If simplifications are required for an interactive model, document the assumptions and explain the limitations.
+
+Never present a simplified model as a complete real-world simulation.
+
+## 4.3 Live Readouts and Visualization
+
+Whenever relevant, show live values such as:
+
+- Speed.
+- Distance.
+- Time.
+- Force.
+- Energy.
+- Acceleration.
+- Angle.
+- Temperature.
+- Pressure.
+- Other lesson-specific variables.
+
+Show appropriate graphs or charts if they help students understand relationships between variables.
+
+Numbers and graphs must update when the student interacts with the experiment.
+
+Do not add numerical readouts or graphs just for decoration. Every visualized value should teach something.
+
+## 4.4 Prediction Before Explanation
+
+Each lesson must have a prediction activity.
+
+Display a question such as:
+
+"تفتكر إيه اللي هيحصل لو...؟"
+
+Present multiple-choice answers.
+
+The student must select an answer before seeing the explanation.
+
+After the prediction:
+- Show whether the prediction was correct.
+- Let the student run the experiment.
+- Reveal the explanation.
+- Explain why the result happened.
+- Allow the student to try again.
+
+Never reveal the correct answer before the student has made a prediction.
+
+## 4.5 The "Why?" Interactive Flap
+
+Implement a visual flap or foldable element on the left page, inspired by interactive educational textbooks.
+
+It should initially appear closed with a label such as:
+
+"ليه؟ — افتح وشوف التفسير"
+
+When the student opens it, reveal a short explanation that connects the observed experimental result with the scientific law.
+
+Use a smooth, realistic opening animation.
+
+The flap must be operable with mouse, touch, and keyboard.
+
+---
+
+# 5. LESSON STRUCTURE
+
+Each lesson should follow this structure.
+
+## A. Left Page — Learn
+
+### 1. Lesson Title
+
+Show an Arabic title and its English scientific equivalent.
+
+### 2. Explanation
+
+Explain the main concept in Egyptian colloquial Arabic.
+
+Keep it short, clear, and divided into small readable paragraphs.
+
+Use bold emphasis for important scientific ideas.
+
+### 3. Key Equations
+
+Display the essential equations from the source.
+
+For each equation:
+- Explain every symbol.
+- Show its unit where applicable.
+- Explain what the equation tells us.
+- Mention the conditions under which it applies.
+- Use clear mathematical typography.
+
+Never modify the scientific meaning of an equation.
+
+### 4. Quick Example
+
+Provide a relatable real-life example when useful.
+
+Prefer Egyptian everyday situations.
+
+### 5. Mini Glossary
+
+Use a compact glossary:
+
+| English Term | المعنى بالعربي | شرح بسيط |
+|---|---|---|
+
+Include the most important terms from the lesson.
+
+### 6. Prediction Activity
+
+Ask one meaningful multiple-choice question.
+
+The question must test understanding, not just memorization.
+
+### 7. Why Flap
+
+Reveal the scientific explanation after the student makes a prediction and interacts with the experiment.
+
+### 8. Key Takeaway
+
+Highlight one sentence that summarizes the most important thing the student should remember.
+
+## B. Right Page — Explore
+
+Include:
+- The interactive Three.js scene.
+- A clear instruction caption in Egyptian Arabic.
+- All relevant interactive controls.
+- Live scientific values.
+- Graphs when educationally useful.
+- Reset functionality.
+- A visible indication of the experiment state.
+
+The experience must remain understandable even if the student does not read the full explanation first.
+
+## C. End of Lesson — Test Yourself
+
+Create 3–5 quick questions per lesson.
+
+Use varied question types when appropriate:
+- Multiple choice.
+- True or false.
+- Predict the result.
+- Choose the correct relationship.
+- Interpret a graph.
+- Apply a concept to a real-life scenario.
+
+Provide immediate feedback.
+
+When the answer is wrong, explain the misconception and guide the student toward the correct reasoning.
+
+Do not just display "Wrong answer".
+
+Include:
+- Correct/incorrect feedback.
+- A short explanation.
+- A retry option.
+- Lesson completion status.
+
+---
+
+# 6. TECHNICAL ARCHITECTURE
+
+## 6.1 Delivery Format
+
+The final application must be delivered as one self-contained HTML file.
+
+The file must contain:
+- HTML markup.
+- CSS.
+- JavaScript.
+- Lesson content data.
+- Three.js scene implementations.
+- Interaction logic.
+- Navigation logic.
+
+Use libraries only through explicitly version-pinned CDN script tags.
+
+Do not use a build step, package installation, bundler, backend, or external images.
+
+Do not use an unversioned CDN URL or a library URL containing `latest`.
+
+Use a compatible pinned Three.js version and load any associated controls or extensions from the same release.
+
+A Google Fonts stylesheet may be used for Cairo or Tajawal, with strong Arabic fallback fonts.
+
+If external resources fail to load, the application should fail gracefully and display a helpful message where necessary.
+
+The result should work by opening the HTML file in a modern browser, subject to browser and CDN restrictions.
+
+## 6.2 Three.js Requirements
+
+Use Three.js for:
+
+- Desk environment.
+- Book geometry.
+- Page meshes.
+- Lighting and shadows.
+- Page-turn visual effects.
+- Interactive 3D scientific experiments.
+- Scientific objects and diagrams.
+
+Use simple, clean geometry and efficient materials.
+
+Use soft lighting and a paper-like scientific illustration aesthetic.
+
+Avoid unnecessary polygon complexity and expensive visual effects.
+
+## 6.3 Modular Code Architecture
+
+Even though the output is a single HTML file, organize the JavaScript into clear modules/classes.
+
+Required conceptual architecture:
+
+- `BookEngine`
+  - Owns the main application lifecycle.
+  - Manages navigation, current lesson, theme, and progress.
+
+- `PageRenderer`
+  - Manages lesson content rendering.
+  - Handles page layout, content updates, and page transitions.
+
+- `BookScene`
+  - Manages the 3D desk and book environment.
+
+- `LessonScene`
+  - Base class/interface for individual interactive lesson scenes.
+  - Defines initialization, update, interaction, resize, and disposal behavior.
+
+- One specific scene class per lesson.
+  - Example: `SpringExperimentScene`, `EnergyScene`, etc.
+  - Names must reflect the real lesson topics.
+
+- `LessonData`
+  - A separate JSON-like data object containing lesson titles, explanations, equations, glossary, predictions, questions, and other educational content.
+
+Keep the lesson content separate from the rendering and simulation code.
+
+Do not put all content, interactions, and application logic into one enormous function.
+
+Use clear names, reusable utilities, and comments that explain important implementation decisions.
+
+## 6.4 Scene Lifecycle and Performance
+
+Only render the active lesson's experiment.
+
+When navigating away from a lesson:
+- Stop its animation loop if it has one.
+- Remove event listeners that are no longer needed.
+- Dispose of its geometries, materials, textures, and render targets when no longer used.
+- Clear unnecessary references.
+- Prevent memory leaks.
+
+Use a shared rendering loop where practical.
+
+Additional requirements:
+- Cap device pixel ratio at 2.
+- Avoid creating objects repeatedly inside animation loops.
+- Reuse geometries and materials when possible.
+- Use efficient lighting and shadows.
+- Handle window resizing.
+- Handle device orientation changes where necessary.
+- Optimize for approximately 60 FPS on a mid-range mobile device.
+- Respect reduced-motion preferences where possible.
+
+## 6.5 Desktop and Mobile
+
+The application must be responsive.
+
+Desktop:
+- Show the open book as the main experience.
+- Maintain a comfortable readable spread.
+- Keep controls close to their relevant experiment.
+
+Mobile:
+- Adapt the book to the smaller viewport.
+- Do not simply shrink the complete desktop spread until everything becomes unreadable.
+- Preserve the book metaphor.
+- Provide a comfortable way to switch between explanation and experiment.
+- Support touch gestures and touch-friendly controls.
+- Avoid horizontal overflow.
+- Keep text, buttons, and controls large enough to use comfortably.
+
+## 6.6 Accessibility
+
+Every important interaction must have an accessible alternative.
+
+Examples:
+- Dragging must have button or slider alternatives.
+- 3D rotation must have accessible camera controls.
+- Every button must have an accessible name.
+- Keyboard navigation must work.
+- Use semantic HTML.
+- Add appropriate ARIA labels.
+- Maintain sufficient color contrast.
+- Do not communicate important information through color alone.
+- Make prediction questions and the "Why?" flap keyboard-accessible.
+
+---
+
+# 7. APPLICATION FEATURES
+
+The complete experience must include:
+
+### Book navigation
+- Previous and next page.
+- Realistic page-turn animation.
+- Table of contents.
+- Direct lesson navigation.
+- Current lesson and page indicator.
+- Lesson progress indicator.
+- Keyboard arrow navigation.
+- Mobile swipe support.
+
+### Student experience
+- Interactive predictions.
+- Interactive experiments.
+- Live results.
+- Experiment reset.
+- Quick knowledge checks.
+- Immediate feedback.
+- Lesson completion tracking.
+- Ability to revisit completed lessons.
+
+### Appearance
+- Light and dark themes.
+- Readable Arabic typography.
+- Comfortable page spacing.
+- Consistent visual language.
+- Smooth, meaningful transitions.
+
+Persist the student's basic progress locally when appropriate, without requiring an account or backend.
+
+---
+
+# 8. IMPLEMENTATION WORKFLOW — FOLLOW THESE PHASES STRICTLY
+
+Do not skip phases.
+
+Do not start implementation before Phase 1 has been approved.
+
+Use the available tools in your environment intelligently. If you have filesystem access, inspect the provided files and create or edit the actual project file. If you have browser preview or execution tools, use them to test the application.
+
+Do not invent tools or claim to have run tests that you could not actually run.
+
+## PHASE 1 — SOURCE ANALYSIS AND LESSON DESIGN
+
+**No code in this phase.**
+
+Read and analyze the provided textbook or chapter completely.
+
+Then deliver:
+
+### 1. Source Understanding
+
+Summarize:
+- What the chapter teaches.
+- Its major topics.
+- Its learning objectives.
+- Important scientific concepts.
+- Its most important equations and principles.
+
+### 2. Lesson Map
+
+Create a structured lesson plan.
+
+For each lesson specify:
+
+| Field | Description |
+|---|---|
+| Lesson Number | Sequence |
+| Arabic Title | Student-facing title |
+| English Title | Scientific title |
+| Core Concept | The one main idea |
+| Learning Objective | What students should understand |
+| Essential Definitions | Important definitions |
+| Key Equations | Equations and units |
+| Interactive 3D Experiment | What the student will manipulate |
+| Live Readouts | Values or graphs to display |
+| Prediction Question | What the student should predict |
+| Knowledge Check | What the student should be able to answer |
+| Source Reference | Original chapter/page/section |
+
+### 3. Interaction Design
+
+For every lesson explain:
+- What will exist in the 3D scene.
+- What objects the student can manipulate.
+- What controls will be available.
+- What changes when the student interacts.
+- Which equations drive the simulation.
+- What values or graphs will update.
+- What concept the student will discover.
+
+The experiments must be different when the concepts require different experiences. Do not reuse the same generic 3D scene for every lesson.
+
+### 4. Content Decisions
+
+Clearly document:
+- Concepts you plan to merge.
+- Repetitive content you plan to simplify.
+- Content you plan to reorganize.
+- Any content you cannot interpret confidently.
+- Any missing information or ambiguities requiring my attention.
+
+Explain why each significant decision is educationally appropriate.
+
+### 5. Coverage Verification
+
+Provide a checklist demonstrating how the important original concepts, equations, and definitions are represented in your proposed lessons.
+
+### 6. Approval Gate
+
+End Phase 1 with:
+- A concise summary of the proposed experience.
+- The expected number of lessons.
+- Any unresolved scientific questions.
+- What will be built in Phase 2.
+
+Then STOP.
+
+Wait for my explicit approval before writing code.
+
+Do not start Phase 2 automatically.
+
+## PHASE 2 — BUILD THE ENGINE + FIRST COMPLETE LESSON
+
+After I approve Phase 1:
+
+First, briefly explain the implementation plan for this phase.
+
+Then build:
+
+### A. Complete Book Environment
+
+Implement the reusable application shell:
+- 3D desk.
+- Realistic open book.
+- Page geometry and page-turn animation.
+- Left/right spread layout.
+- Navigation.
+- Table of contents.
+- Progress indicator.
+- Responsive behavior.
+- RTL support.
+- Theme switching.
+- Keyboard and touch navigation.
+
+### B. First Fully Functional Lesson
+
+Implement lesson 1 completely, including:
+- All educational content.
+- Equations and symbol explanations.
+- Glossary.
+- Prediction activity.
+- Interactive explanation flap.
+- Actual 3D simulation.
+- Meaningful controls.
+- Live calculations.
+- Relevant graphs or values.
+- Lesson-end questions.
+- Instant feedback.
+
+### C. Review and Testing
+
+Test the application in the available environment.
+
+Check:
+- The 3D scene actually renders.
+- The controls work.
+- The equations produce correct results.
+- The values update correctly.
+- Page navigation works.
+- Page-turn animations work.
+- The Arabic layout is readable.
+- RTL/LTR mathematical content renders correctly.
+- Mobile layout does not break.
+- No console errors remain that affect functionality.
+
+Deliver the actual HTML file as an artifact or saved workspace file, not merely a large code snippet in the conversation when file creation is available.
+
+Do not include fake features or nonfunctional controls.
+
+After completion, provide a short checklist of:
+- What is implemented.
+- What was tested.
+- Known limitations.
+- What is planned for Phase 3.
+
+Then STOP and wait for my review and approval.
+
+## PHASE 3 — COMPLETE THE REMAINING LESSONS
+
+After I approve Phase 2:
+
+Implement the remaining lessons in batches of 2–3 lessons per iteration.
+
+For every batch:
+
+1. Briefly state the implementation plan.
+2. Add the new lesson content to the existing lesson data.
+3. Implement a specific interactive scene for each new lesson.
+4. Connect every interaction to the correct scientific calculations.
+5. Add prediction activities and knowledge checks.
+6. Integrate the lessons into the existing navigation and progress system.
+7. Test the new scenes.
+8. Verify their scientific accuracy against the textbook.
+9. Check that previous lessons and the application shell still work.
+
+Keep editing the same HTML application.
+
+Do not rewrite or break the shared engine unnecessarily.
+
+Do not remove previously completed lessons.
+
+Do not leave TODOs, fake scenes, or placeholders for future implementation.
+
+After each batch, provide a checklist and STOP for my review.
+
+Continue only after approval.
+
+## PHASE 4 — FINAL POLISH AND QUALITY ASSURANCE
+
+After all lessons are implemented, perform a complete final review.
+
+### Educational QA
+- Verify all concepts against the original source.
+- Verify equations, definitions, units, and assumptions.
+- Check every lesson's prediction and explanation.
+- Check all quiz answers and feedback.
+- Verify that the simplified explanations do not distort the science.
+- Identify any remaining limitations.
+
+### Visual QA
+- Inspect the complete open-book experience.
+- Check page-turning transitions.
+- Check Arabic typography and alignment.
+- Check the 3D book environment.
+- Check that experiments visually belong to the book.
+- Check the overall visual consistency.
+
+### Technical QA
+- Test all lessons.
+- Test all interactive controls.
+- Test navigation and progress.
+- Test reset behavior.
+- Test desktop and mobile layouts.
+- Check memory disposal when changing lessons.
+- Check performance and unnecessary rendering.
+- Check browser console errors.
+- Check accessibility and keyboard operation.
+
+### Final Delivery
+
+Deliver:
+- The final single HTML file.
+- A concise list of completed lessons.
+- A list of implemented interactive experiments.
+- A brief testing report.
+- Any known limitations or source ambiguities.
+
+Do not claim a test passed unless you actually performed it.
+
+---
+
+# 9. DEFINITION OF DONE — QUALITY BAR
+
+The project is NOT complete just because an HTML file exists or because the page looks attractive.
+
+It is complete only when these requirements are met:
+
+1. The student can browse a convincing 3D open textbook.
+2. The original source's essential educational content is preserved.
+3. All explanations are in natural Egyptian Arabic with the relevant English terms.
+4. Each lesson has a clear learning objective.
+5. Each lesson contains a relevant interactive experiment or visualization.
+6. The student can meaningfully manipulate the 3D scene.
+7. The simulation uses real calculations based on the scientific principles.
+8. Live values and graphs correctly reflect the interaction.
+9. The prediction activity happens before the explanation is revealed.
+10. The student can open the "Why?" flap and understand the result.
+11. Each lesson has knowledge-check questions with useful feedback.
+12. The book navigation, page transitions, and progress tracking work.
+13. The experience works on desktop and mobile.
+14. The experience is accessible and reasonably performant.
+15. The final code is organized, maintainable, and free from unfinished placeholders.
+16. The final result is delivered as a usable HTML file.
+
+**Never prioritize visual decoration over educational quality, scientific accuracy, or actual interactivity.**
+
+When a trade-off is necessary, prioritize:
+
+1. Scientific accuracy.
+2. Student understanding.
+3. Meaningful interaction.
+4. Usability and accessibility.
+5. Visual polish.
+
+# 10. IMPORTANT WORKING RULES
+
+- Be proactive and make thoughtful design decisions.
+- Do not ask me to decide every small visual or technical detail.
+- Use your expertise to choose appropriate interactions and visualizations.
+- Ask me only when a genuine source ambiguity or important decision cannot be resolved safely.
+- Never silently skip textbook content.
+- Never fabricate scientific explanations or simulation results.
+- Never substitute static images for requested interactive experiments.
+- Never claim functionality that has not been implemented.
+- Never start a new phase without my approval.
+- Preserve the existing working implementation when extending the project.
+- Deliver working artifacts whenever the available environment supports file creation.
+
+Your goal is to create an educational experience that makes students say:
+
+"I finally understand this concept because I experimented with it myself."
+
+**Start with PHASE 1 ONLY. Analyze the provided textbook and reference image, create the full lesson map, and wait for my approval. DO NOT WRITE CODE YET.**

@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "book-ch01", "url": "http://localhost:8790", "port": 8790 }
+  ]
+}

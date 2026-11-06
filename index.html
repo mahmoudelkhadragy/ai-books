@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>كتاب الفيزياء التفاعلي</title>
+<meta name="description" content="كتاب فيزياء تفاعلي 3D لطلاب 3 ثانوي: اتوقّع، جرّب، لاحظ، افهم، طبّق.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS (نفس ألوان الكتاب)
+   ========================================================= */
+:root{
+  --ink:#2a2622; --ink-2:#574e44; --ink-3:#8a7f71; --rule:rgba(42,38,34,.16);
+  --amber:#b8620c; --amber-soft:rgba(184,98,12,.10);
+  --cyan:#13708f; --violet:#6a4c9c;
+  --bg:#d9cfbd; --card:#fbf8f1; --card-line:rgba(42,38,34,.14);
+  --shadow:0 12px 34px rgba(48,36,22,.18);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#f2eadb; --ink-2:#cbbfab; --ink-3:#9a8f7f; --rule:rgba(255,240,215,.14);
+    --amber:#f0a24a; --amber-soft:rgba(240,162,74,.12);
+    --cyan:#5fb6d3; --violet:#a98bd8;
+    --bg:#16130f; --card:#211d18; --card-line:rgba(255,240,215,.12);
+    --shadow:0 12px 34px rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+}
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);}
+body{font-family:'Cairo',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;color:var(--ink);line-height:1.7;min-height:100vh;-webkit-tap-highlight-color:transparent;}
+main{max-width:760px;margin:0 auto;padding:56px 16px 64px;}
+
+.kicker{margin:0;color:var(--amber);font-weight:700;font-size:15px;letter-spacing:.02em}
+h1{margin:4px 0 12px;font-size:clamp(30px,6vw,44px);line-height:1.25;font-weight:800}
+.lead{margin:0;color:var(--ink-2);font-size:18px;max-width:34em}
+.steps{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0}
+.steps li{padding:2px 14px;border-radius:999px;border:1px solid var(--rule);color:var(--ink-2);font-size:14px;font-weight:600}
+.steps li:nth-child(2){color:var(--amber);border-color:var(--amber)}
+
+h2{margin:44px 0 14px;font-size:15px;color:var(--ink-3);font-weight:700}
+
+/* كارت الفصل الجاهز */
+.chapter{display:flex;align-items:center;gap:18px;padding:22px;border-radius:16px;background:var(--card);border:1px solid var(--card-line);box-shadow:var(--shadow);color:inherit;text-decoration:none;transition:transform .15s ease, border-color .15s ease}
+.chapter:hover{transform:translateY(-2px);border-color:var(--amber)}
+.chapter:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.num{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--amber-soft);color:var(--amber);font-size:26px;font-weight:800}
+.body{flex:1;min-width:0;display:flex;flex-direction:column}
+.tag{color:var(--amber);font-size:13px;font-weight:700}
+.name{font-size:20px;font-weight:800;line-height:1.45}
+.meta{color:var(--ink-3);font-size:14px}
+.go{flex:none;padding:8px 16px;border-radius:10px;background:var(--amber);color:#fff;font-weight:700;font-size:15px}
+
+/* باقي الفصول */
+.soon{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.soon li{display:flex;align-items:baseline;gap:14px;padding:12px 4px;border-bottom:1px solid var(--rule);color:var(--ink-2)}
+.soon .n{flex:none;width:28px;color:var(--ink-3);font-weight:700}
+.soon .t{flex:1}
+.soon .s{flex:none;font-size:13px;color:var(--ink-3)}
+
+footer{margin-top:40px;color:var(--ink-3);font-size:14px}
+
+@media (max-width:520px){
+  main{padding-top:36px}
+  .chapter{flex-wrap:wrap;padding:18px;gap:14px}
+  .go{width:100%;text-align:center}
+}
+@media (prefers-reduced-motion: reduce){
+  .chapter{transition:none}
+  .chapter:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="kicker">فيزياء · 3 ثانوي</p>
+    <h1>كتاب الفيزياء التفاعلي</h1>
+    <p class="lead">كتاب مفتوح على مكتب: الشرح على صفحة، والتجربة 3D على الصفحة اللي جنبها، تلعب فيها بإيدك.</p>
+    <ol class="steps" aria-label="طريقة كل درس">
+      <li>اتوقّع</li><li>جرّب</li><li>لاحظ</li><li>افهم</li><li>طبّق</li>
+    </ol>
+  </header>
+
+  <h2>متاح دلوقتي</h2>
+  <a class="chapter" href="interactive-book/ch01/ch01-electric-current.html">
+    <span class="num">1</span>
+    <span class="body">
+      <span class="tag">الفصل الأول</span>
+      <span class="name">التيار الكهربي وقانون أوم وقانونا كيرشوف</span>
+      <span class="meta">الدرس 1 جاهز · باقي الـ16 درس جايين</span>
+    </span>
+    <span class="go">افتح الفصل ←</span>
+  </a>
+
+  <h2>باقي الفصول</h2>
+  <ul class="soon">
+    <li><span class="n">2</span><span class="t">التأثير المغناطيسي للتيار الكهربي وأجهزة القياس الكهربي</span><span class="s">قريبًا</span></li>
+    <li><span class="n">3</span><span class="t">الحث الكهرومغناطيسي</span><span class="s">قريبًا</span></li>
+    <li><span class="n">4</span><span class="t">دوائر التيار المتردد</span><span class="s">قريبًا</span></li>
+    <li><span class="n">5</span><span class="t">ازدواجية الموجة والجسيم</span><span class="s">قريبًا</span></li>
+    <li><span class="n">6</span><span class="t">الأطياف الذرية</span><span class="s">قريبًا</span></li>
+    <li><span class="n">7</span><span class="t">الليزر</span><span class="s">قريبًا</span></li>
+    <li><span class="n">8</span><span class="t">الإلكترونيات الحديثة</span><span class="s">قريبًا</span></li>
+  </ul>
+
+  <footer>محتاج إنترنت عشان التجارب 3D والخط. بيشتغل على الكمبيوتر والموبايل.</footer>
+</main>
+</body>
+</html>
