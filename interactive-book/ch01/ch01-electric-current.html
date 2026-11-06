@@ -2184,8 +2184,11 @@ class BookScene {
     });
   }
   resize() {
-    const w = this.w = this.container.clientWidth, h = this.h = this.container.clientHeight;
+    const w = this.container.clientWidth, h = this.container.clientHeight;
+    if (w < 2 || h < 2) return false;   // hidden/minimised: keep the last good size (avoids NaN camera poses)
+    this.w = w; this.h = h;
     this.camera.aspect = w / h; this.camera.updateProjectionMatrix(); this.renderer.setSize(w, h); this.css.setSize(w, h);
+    return true;
   }
   projectedPageWidth(side) {
     const x0 = side === 'L' ? -PW : 0, a = new THREE.Vector3(x0, TOP, 0).project(this.camera), b = new THREE.Vector3(x0 + PW, TOP, 0).project(this.camera);
@@ -2810,7 +2813,9 @@ class BookEngine {
     window.__book = this;
     this.book.bottomPad = 86;
     this.book.setTheme(this.theme === 'dark');
-    this.updateSingle(); this.book.resize();
+    this.updateSingle();
+    if (!this.book.resize()) { this.book.w = innerWidth || 1280; this.book.h = innerHeight || 800; this.book.camera.aspect = this.book.w / this.book.h; this.book.camera.updateProjectionMatrix(); }
+    addEventListener('visibilitychange', () => { if (!document.hidden && this.book.resize()) this.pages.layout(); });
     this.pages = new PageRenderer(this.book, this);
     this.buildChrome(); this.bindInput();
     const start = clamp(+Store.data.lastSpread || 0, 0, SPREADS.length - 1);
@@ -2977,7 +2982,8 @@ class BookEngine {
       if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.6 && performance.now() - ts.t < 700) dx > 0 ? this.next() : this.prev(); ts = null;
     }, { passive: true });
     let rt; addEventListener('resize', () => {
-      this.updateSingle(); this.book.resize(); this.book.controls.enableRotate = !this.single; clearTimeout(rt);
+      if (!this.book.resize()) return;
+      this.updateSingle(); this.book.controls.enableRotate = !this.single; clearTimeout(rt);
       rt = setTimeout(async () => { await this.book.flyTo(this.viewMode(), 0.3); this.pages.layout(); }, 120);
     });
     this.book.controls.addEventListener('end', () => { clearTimeout(this._lt); this._lt = setTimeout(() => this.pages.layout(), 250); });
